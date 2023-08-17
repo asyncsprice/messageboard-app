@@ -11,7 +11,6 @@ html, body {
 
 header {
     text-align: center;
-    /* outline: 1px solid red; */
     margin: 3rem 0;
     margin-bottom: 1rem;
 }
@@ -26,7 +25,6 @@ header h1 {
 }
 
 #endorsement {
-    /* outline: 1px solid red; */
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -101,5 +99,35 @@ main h2 {
     font-style: italic;
     margin-inline: 1rem;
     max-width: 100%;
-    overflow: scroll;
+}
+
+@media (min-width: 700px) {
+    body {
+        max-width: 700px;
+        margin-inline: auto;
+    }
+}
+
+@media (min-width: 1000px) {
+    body {
+        max-width: 1000px;
+        max-height: 100vh;;
+        margin-inline: auto;
+    }
+
+    #endorsement {
+        width: 50%;
+        margin-top: 4.5rem;
+    }
+
+    #post-wrapper {
+        scrollbar-width: .1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+
+    .post {
+        max-width: 50%;
+    }
 }
