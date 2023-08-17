@@ -121,13 +121,15 @@ main h2 {
     }
 
     #post-wrapper {
+        margin-inline: auto;
         scrollbar-width: .1rem;
         flex-direction: row;
+        justify-content: space-around;
         flex-wrap: wrap;
-        max-width: 100%;
+        max-width: 80%;
     }
 
     .post {
-        max-width: 50%;
+        max-width: 40%;
     }
 }
