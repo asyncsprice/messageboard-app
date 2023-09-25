@@ -25,11 +25,13 @@ const messageBoardDB = ref(database, "messageboard");
 const entry = {
     message: userEntry,
     from: fromEl,
-    to: toEl
+    to: toEl,
+    isLiked: false,
+    likes: 0
 };
 
 publishEl.addEventListener("click", () => {
-    let messageArr = [entry.to.value, entry.message.value, entry.from.value]
+    let messageArr = [entry.to.value, entry.message.value, entry.from.value, entry.isLiked, entry.likes]
     push(messageBoardDB, messageArr)
     inputReset()
 });
