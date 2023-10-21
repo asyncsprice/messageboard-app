@@ -59,6 +59,7 @@ function publishPosts(arr) {
     const postTo = document.createElement("h3");
     const post = document.createElement("p");
     const postFrom = document.createElement("h3");
+    const div = document.createElement("div")
     /* get heart icon, get uuid setup as well */
     const reactionBtn = document.createElement("i");
     for (let i = 0; i < 1; i++) {
@@ -68,17 +69,27 @@ function publishPosts(arr) {
     for (let i = 0; i < 1; i++) {
             let toItem = itemArr[0];
             let messageItem = itemArr[1];
-            let fromItem = itemArr[2];
+        let fromItem = itemArr[2];
+            let likes = itemArr[4];
+            let comments = itemArr[6];
             console.log(toItem);
             console.log(messageItem);
             console.log(fromItem);
             section.className = "post";
             postTo.textContent = `To: ${toItem}`
             post.textContent = `${messageItem}`
-            postFrom.textContent = `From: ${fromItem}`;
+            postFrom.textContent = `From: ${fromItem
+            }`;
+            div.classList.add("btn.container")
+            reactionBtn.classList.add("fa-heart fa-solid");
+            div.appendChild(reactonBtn);
+            reactionBtn.classList = "fa-message fa-solid";
+            div.appendChild(reactionBtn);
+            
             section.appendChild(postTo);
             section.appendChild(post);
             section.appendChild(postFrom);
+            section.appendChild(div);
             postWrapper.prepend(section);
         };
     };
