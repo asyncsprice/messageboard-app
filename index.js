@@ -57,6 +57,8 @@ function publishPosts(arr) {
     const postTo = document.createElement("h3");
     const post = document.createElement("p");
     const postFrom = document.createElement("h3");
+    /* get heart icon, get uuid setup as well */
+    const heartBtn = document.createElement("i");
     for (let i = 0; i < 1; i++) {
         let itemID = arr[0];
         let itemArr = arr[1];
