@@ -84,6 +84,7 @@ main h2 {
     background-color: #fff;
     color: black;
     padding: .25rem .7rem;
+    border-radius: 1.5em;
 }
 
 .post:last-child {
