@@ -27,11 +27,13 @@ const entry = {
     from: fromEl,
     to: toEl,
     isLiked: false,
-    likes: 0
+    likes: 0,
+    isCommented: false,
+    comments: []
 };
 
 publishEl.addEventListener("click", () => {
-    let messageArr = [entry.to.value, entry.message.value, entry.from.value, entry.isLiked, entry.likes]
+    let messageArr = [entry.to.value, entry.message.value, entry.from.value, entry.isLiked, entry.likes, entry.isCommented, entry.comments]
     push(messageBoardDB, messageArr)
     inputReset()
 });
@@ -58,12 +60,12 @@ function publishPosts(arr) {
     const post = document.createElement("p");
     const postFrom = document.createElement("h3");
     /* get heart icon, get uuid setup as well */
-    const heartBtn = document.createElement("i");
+    const reactionBtn = document.createElement("i");
     for (let i = 0; i < 1; i++) {
         let itemID = arr[0];
         let itemArr = arr[1];
 
-        for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 1; i++) {
             let toItem = itemArr[0];
             let messageItem = itemArr[1];
             let fromItem = itemArr[2];
