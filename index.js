@@ -32,7 +32,7 @@ const entry = {
     comments: []
 };
 
-publishEl.addEventListener("click", () => {
+publishEl.addEventListener("pointerdown", () => {
     let messageArr = [entry.to.value, entry.message.value, entry.from.value, entry.isLiked, entry.likes, entry.isCommented, entry.comments]
     push(messageBoardDB, messageArr)
     inputReset()
