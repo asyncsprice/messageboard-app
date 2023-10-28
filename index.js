@@ -27,11 +27,13 @@ const entry = {
     from: fromEl,
     to: toEl,
     isLiked: false,
-    likes: 0
+    likes: 0,
+    isCommented: false,
+    comments: []
 };
 
-publishEl.addEventListener("click", () => {
-    let messageArr = [entry.to.value, entry.message.value, entry.from.value, entry.isLiked, entry.likes]
+publishEl.addEventListener("pointerdown", () => {
+    let messageArr = [entry.to.value, entry.message.value, entry.from.value, entry.isLiked, entry.likes, entry.isCommented, entry.comments]
     push(messageBoardDB, messageArr)
     inputReset()
 });
@@ -57,24 +59,40 @@ function publishPosts(arr) {
     const postTo = document.createElement("h3");
     const post = document.createElement("p");
     const postFrom = document.createElement("h3");
+    const div = document.createElement("div")
+    /* get heart icon, get uuid setup as well */
+    const heartBtn = document.createElement("i");
+    const commentBtn = document.createElement("i");
     for (let i = 0; i < 1; i++) {
         let itemID = arr[0];
         let itemArr = arr[1];
 
-        for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 1; i++) {
             let toItem = itemArr[0];
             let messageItem = itemArr[1];
-            let fromItem = itemArr[2];
+        let fromItem = itemArr[2];
+            let likes = itemArr[4];
+            let comments = itemArr[6];
             console.log(toItem);
             console.log(messageItem);
             console.log(fromItem);
             section.className = "post";
             postTo.textContent = `To: ${toItem}`
             post.textContent = `${messageItem}`
-            postFrom.textContent = `From: ${fromItem}`;
+            postFrom.textContent = `From: ${fromItem
+            }`;
+            div.classList.add("btn.container")
+            heartBtn.classList.add("fa-heart");
+            heartBtn.classList.add("fa-solid");
+            div.appendChild(heartBtn);
+            commentBtn.classList.add("fa-message");
+            commentBtn.classList.add("fa-solid");
+            div.appendChild(commentBtn);
+            
             section.appendChild(postTo);
             section.appendChild(post);
             section.appendChild(postFrom);
+            section.appendChild(div);
             postWrapper.prepend(section);
         };
     };
