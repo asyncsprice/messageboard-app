@@ -82,7 +82,7 @@ function publishPosts(arr) {
             }`;
             div.classList.add("btn.container")
             reactionBtn.classList.add("fa-heart", "fa-solid");
-            div.appendChild(reactonBtn);
+            div.appendChild(reactionBtn);
             reactionBtn.classList = "fa-message", "fa-solid";
             div.appendChild(reactionBtn);
             
