@@ -81,9 +81,9 @@ function publishPosts(arr) {
             postFrom.textContent = `From: ${fromItem
             }`;
             div.classList.add("btn.container")
-            reactionBtn.classList.add("fa-heart fa-solid");
+            reactionBtn.classList.add("fa-heart", "fa-solid");
             div.appendChild(reactonBtn);
-            reactionBtn.classList = "fa-message fa-solid";
+            reactionBtn.classList = "fa-message", "fa-solid";
             div.appendChild(reactionBtn);
             
             section.appendChild(postTo);
