@@ -21,7 +21,7 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const messageBoardDB = ref(database, "messageboard");
 
-console.log(uuid())
+
 /* entry object */
 const entry = {
     message: userEntry,
@@ -131,6 +131,7 @@ window.addEventListener("pointerdown", (e) => {
  */
 function handleLike(likeUuid) {
     console.log(likeUuid)
+    console.log(uuid())
 }
 
 function handleComment(commentUuid) {
