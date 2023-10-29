@@ -43,6 +43,7 @@ publishEl.addEventListener("pointerdown", () => {
     let messageArr = [entry.to.value, entry.message.value, entry.from.value, entry.isLiked, entry.likes, entry.isCommented, entry.comments, entry.entryId]
     push(messageBoardDB, messageArr)
     inputReset()
+    entry.entryId = ''
 });
 
 onValue(messageBoardDB, function(snapshot) {
