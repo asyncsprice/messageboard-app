@@ -39,7 +39,7 @@ function getUuid() {
 }
 
 publishEl.addEventListener("pointerdown", () => {
-    entry.entryId = getUuid
+    entry.entryId = getUuid()
     let messageArr = [entry.to.value, entry.message.value, entry.from.value, entry.isLiked, entry.likes, entry.isCommented, entry.comments, entry.entryId]
     push(messageBoardDB, messageArr)
     inputReset()
