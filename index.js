@@ -73,9 +73,7 @@ function publishPosts(arr) {
         let fromItem = itemArr[2];
             let likes = itemArr[4];
             let comments = itemArr[6];
-            console.log(toItem);
-            console.log(messageItem);
-            console.log(fromItem);
+
             section.className = "post";
             postTo.textContent = `To: ${toItem}`
             post.textContent = `${messageItem}`
