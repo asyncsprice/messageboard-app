@@ -31,10 +31,12 @@ const entry = {
     likes: 0,
     isCommented: false,
     comments: [],
-    entryId: function() { 
-        return uuid() 
-    }
+    entryId: getUuid()
 };
+
+function getUuid() {
+    return uuid() 
+}
 
 publishEl.addEventListener("pointerdown", () => {
     let messageArr = [entry.to.value, entry.message.value, entry.from.value, entry.isLiked, entry.likes, entry.isCommented, entry.comments, entry.entryId]
