@@ -115,17 +115,24 @@ function clearMessageboard() {
 };
 
 
-
+window.addEventListener("pointerdown", (e) => {
+    if (e.target.dataset.likeId) {
+        handleLike(e.target.dataset.likeId)
+    }
+    else if (e.target.dataset.commentId) {
+        handleComment(e.target.dataset.commentId)
+    }
+})
 /* 
     make sure uuid works, make sure dataset is set
     make consolelogs in the functions
     make event listeners
     fill out functions
  */
-function handleLike() {
-
+function handleLike(likeUuid) {
+    console.log(likeUuid)
 }
 
-function handleComment() {
-    
+function handleComment(commentUuid) {
+    console.log(commentUuid)
 }
