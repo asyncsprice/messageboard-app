@@ -31,7 +31,7 @@ const entry = {
     likes: 0,
     isCommented: false,
     comments: [],
-    entryId: uuid()
+    entryId: () => uuid()
 };
 
 publishEl.addEventListener("pointerdown", () => {
