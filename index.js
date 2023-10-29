@@ -31,7 +31,7 @@ const entry = {
     likes: 0,
     isCommented: false,
     comments: [],
-    entryId: getUuid()
+    entryId: 0
 };
 
 function getUuid() {
@@ -39,6 +39,7 @@ function getUuid() {
 }
 
 publishEl.addEventListener("pointerdown", () => {
+    entry.entryId = getUuid
     let messageArr = [entry.to.value, entry.message.value, entry.from.value, entry.isLiked, entry.likes, entry.isCommented, entry.comments, entry.entryId]
     push(messageBoardDB, messageArr)
     inputReset()
@@ -135,7 +136,6 @@ window.addEventListener("pointerdown", (e) => {
  */
 function handleLike(likeUuid) {
     console.log(likeUuid)
-    console.log(uuid())
 }
 
 function handleComment(commentUuid) {
