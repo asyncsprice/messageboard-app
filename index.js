@@ -10,6 +10,7 @@ const postWrapper = document.getElementById("post-wrapper")
 /* This section will hold our imports */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import { v4 as uuid } from 'https://jspm.dev/uuid';
 
 
 /* This section will connect the database */
@@ -29,7 +30,8 @@ const entry = {
     isLiked: false,
     likes: 0,
     isCommented: false,
-    comments: []
+    comments: [],
+    entryId: uuid()
 };
 
 publishEl.addEventListener("pointerdown", () => {
@@ -70,21 +72,26 @@ function publishPosts(arr) {
     for (let i = 0; i < 1; i++) {
             let toItem = itemArr[0];
             let messageItem = itemArr[1];
-        let fromItem = itemArr[2];
+            let fromItem = itemArr[2];
+            let isLiked = itemArr[3];
             let likes = itemArr[4];
+            let isCommented = itemArr[5]
             let comments = itemArr[6];
+            let btnId = itemArr[7]
 
             section.className = "post";
             postTo.textContent = `To: ${toItem}`
             post.textContent = `${messageItem}`
             postFrom.textContent = `From: ${fromItem
             }`;
-            div.classList.add("btn.container")
+            div.classList.add("btn-container")
             heartBtn.classList.add("fa-heart");
             heartBtn.classList.add("fa-solid");
+            heartBtn.dataset.likeId = btnId;
             div.appendChild(heartBtn);
             commentBtn.classList.add("fa-message");
             commentBtn.classList.add("fa-solid");
+            commentBtn.dataset.commentId = btnId;
             div.appendChild(commentBtn);
             
             section.appendChild(postTo);
@@ -106,3 +113,19 @@ function inputReset() {
 function clearMessageboard() {
     postWrapper.textContent ='';
 };
+
+
+
+/* 
+    make sure uuid works, make sure dataset is set
+    make consolelogs in the functions
+    make event listeners
+    fill out functions
+ */
+function handleLike() {
+
+}
+
+function handleComment() {
+    
+}
