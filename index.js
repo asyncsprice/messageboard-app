@@ -130,10 +130,8 @@ window.addEventListener("pointerdown", (e) => {
     }
 })
 /* 
-    make sure uuid works, make sure dataset is set
-    make consolelogs in the functions
-    make event listeners
-    fill out functions
+    make like btn look at snapshot and compare, if they are the same update is liked for the class and boolean
+    then update it. look at our list and look for how the delete is used. look to do same thing but modify entry with a new one.
  */
 function handleLike(likeUuid) {
     console.log(likeUuid)
